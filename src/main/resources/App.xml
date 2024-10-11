@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <!-- Employee Bean Definition -->
+    <bean id="employee" class="com.myorganisation.iocproject.model.Employee">
+        <constructor-arg value="Abhishek" type="String"></constructor-arg>
+        <constructor-arg ref="address"/> <!-- Reference to Address bean -->
+        <constructor-arg ref="department"/> <!-- Reference to Department bean -->
+    </bean>
+
+    <!-- Address Bean Definition -->
+    <bean id="address" class="com.myorganisation.iocproject.model.Address">
+        <constructor-arg value="Bharat" type="String"></constructor-arg>
+        <constructor-arg value="UP" type="String"></constructor-arg>
+        <constructor-arg value="Lucknow" type="String"></constructor-arg>
+    </bean>
+
+    <!-- Department Bean Definition -->
+    <bean id="department" class="com.myorganisation.iocproject.model.Department">
+        <constructor-arg value="01" type="Integer"></constructor-arg>
+        <constructor-arg value="Engineering" type="String"></constructor-arg>
+    </bean>
+
+</beans>
